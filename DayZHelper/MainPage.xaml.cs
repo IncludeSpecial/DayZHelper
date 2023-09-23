@@ -35,8 +35,8 @@ namespace DayZHelper
             var passwords = new List<string>();
             var random = new Random();
 
-            int leftColumnCount = numberOfPasswords / 2; // Количество элементов для левой колонки
-            int rightColumnCount = numberOfPasswords - leftColumnCount; // Количество элементов для правой колонки
+            int leftColumnCount = numberOfPasswords / 2;
+            int rightColumnCount = numberOfPasswords - leftColumnCount;
 
             for (int i = 0; i < Math.Max(leftColumnCount, rightColumnCount); i++)
             {

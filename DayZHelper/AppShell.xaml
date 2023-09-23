@@ -14,6 +14,11 @@
             Route="MainPage" />
         
         <ShellContent
+            Title="Калькулятор рейда"
+            ContentTemplate="{DataTemplate local:RaidCalc}"
+            Route="MainPage" />
+        
+        <ShellContent
             Title="О приложении"
             ContentTemplate="{DataTemplate local:AboutPage}"
             Route="MainPage" />
