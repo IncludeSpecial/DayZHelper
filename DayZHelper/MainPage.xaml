@@ -2,36 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DayZHelper.MainPage"
-             Title="Генератор паролей DayZ"
+             Title="DayZ Helper"
              MinimumWidthRequest="320"
              MinimumHeightRequest="480">
 
-    <StackLayout Padding="20" BackgroundColor="#13171b">
-        <Label Text="Генератор паролей"
-               FontSize="24"
-               HorizontalOptions="CenterAndExpand"
-               Margin="0,50" />
+       <ScrollView>
+              <StackLayout Padding="20" BackgroundColor="#13171b">
+                     <Label Text="Генератор паролей"
+                            FontSize="24"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,50" />
         
-        <Label Text="Введите количество паролей:"
-               FontSize="18"
-               Margin="0,50" />
+                     <Label Text="Введите количество паролей:"
+                            FontSize="18"
+                            Margin="0,50" />
         
-        <Entry x:Name="NumberOfPasswordsEntry"
-               BackgroundColor="#dcebf9"
-               TextColor="#134271"
-               Keyboard="Numeric"
-               Placeholder="Количество паролей" />
+                     <Entry x:Name="NumberOfPasswordsEntry"
+                            BackgroundColor="#dcebf9"
+                            TextColor="#134271"
+                            Keyboard="Numeric"
+                            Placeholder="Количество паролей" />
         
-        <Button Text="Сгенерировать пароли"
-                BackgroundColor="#2e85dc"
-                TextColor="#dcebf9"
-                Clicked="GenerateButton_Clicked"
-                Margin="0,20" />
+                     <Button Text="Сгенерировать пароли"
+                             BackgroundColor="#2e85dc"
+                             TextColor="#dcebf9"
+                             Clicked="GenerateButton_Clicked"
+                             Margin="0,20" />
         
-        <Label x:Name="PasswordsLabel"
-               FontSize="18"
-               Margin="0,20" />
-        
-    </StackLayout>
+                     <Label x:Name="PasswordsLabel"
+                            FontSize="18"
+                            Margin="0,20" />
+              </StackLayout>
+       </ScrollView>
+
 
 </ContentPage>

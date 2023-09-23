@@ -31,7 +31,8 @@ namespace DayZHelper
 
             while (passwords.Count < numberOfPasswords)
             {
-                string newPassword = Guid.NewGuid().ToString("N").Substring(0, 4);
+                // Генерируем случайное число от 0 до 9999 и преобразуем его в строку с нулями в начале.
+                string newPassword = random.Next(10000).ToString("D4");
 
                 if (!passwords.Contains(newPassword))
                 {
