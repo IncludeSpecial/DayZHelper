@@ -2,11 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DayZHelper.MainPage"
              Title="DayZ Helper"
-             MinimumWidthRequest="320"
-             MinimumHeightRequest="480">
+             BackgroundColor="#13171b">
 
     <ScrollView>
-        <StackLayout Padding="20" BackgroundColor="#13171b">
+        <StackLayout Padding="20"
+                     BackgroundColor="#13171b">
             <Label Text="Генератор паролей"
                    FontSize="24"
                    HorizontalOptions="CenterAndExpand"
@@ -16,11 +16,21 @@
                    FontSize="18"
                    Margin="0,50" />
 
-            <Entry x:Name="NumberOfPasswordsEntry"
-                   BackgroundColor="#dcebf9"
-                   TextColor="#134271"
-                   Keyboard="Numeric"
-                   Placeholder="Количество паролей" />
+            <Border Stroke="#13171b"
+                    StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5,5,5,5" />
+                </Border.StrokeShape>
+
+                <Entry x:Name="NumberOfPasswordsEntry"
+                       BackgroundColor="#dcebf9"
+                       TextColor="#134271"
+                       Keyboard="Numeric"
+                       Margin="0.1"
+                       HorizontalTextAlignment="Center"
+                       Placeholder="Количество паролей" />
+            </Border>
+
 
             <Button Text="Сгенерировать пароли"
                     BackgroundColor="#2e85dc"

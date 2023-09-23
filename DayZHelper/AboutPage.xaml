@@ -1,35 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DayZHelper.AboutPage"
              Title="О приложении"
-             MinimumWidthRequest="320"
-             MinimumHeightRequest="480">
+             BackgroundColor="#13171b">
+    <ScrollView>
+        <StackLayout Padding="20"
+                     BackgroundColor="#13171b">
+            <Label Text="DayZ Helper"
+                   TextColor="#dcebf9"
+                   FontSize="24"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,20" />
 
-    <StackLayout Padding="20"
-                 BackgroundColor="#13171b">
-           
-        <Label Text="О приложении"
-               TextColor="#dcebf9"
-               FontSize="24"
-               HorizontalOptions="CenterAndExpand"
-               Margin="0,20" />
-           
-        <Label Text="Название приложения: DayZ Helper"
-               TextColor="#dcebf9"
-               FontSize="18"
-               Margin="0,20" />
-           
-        <Label Text="Автор: Switty"
-               TextColor="#dcebf9"
-               FontSize="18"
-               Margin="0,10" />
-           
-        <Label Text="Версия: 0.0.1"
-               TextColor="#dcebf9"
-               FontSize="18"
-               Margin="0,10" />
-        
-    </StackLayout>
+            <!-- Описание приложения -->
+            <Label Text="Описание приложения:"
+                   FontAttributes="Bold"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
 
+            <Label
+                Text="DayZ Helper - это удобное мобильное приложение, разработанное командой Switty и TeSSDv, которое предназначено для облегчения жизни игроков в популярной игре DayZ. Это приложение предоставляет несколько полезных функций для игроков, помогая им сгенерировать безопасные пароли, а также доступ к калькулятору рейда для различных серверов."
+                TextColor="#dcebf9"
+                FontSize="16"
+                Margin="0,10" />
+
+            <Label Text="Главные возможности приложения включают:"
+                   FontAttributes="Bold"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
+
+            <!-- Список главных возможностей -->
+            <StackLayout>
+                <Label Text="Генератор паролей:"
+                       FontAttributes="Bold"
+                       TextColor="#dcebf9"
+                       FontSize="18"
+                       Margin="0,10" />
+                <Label
+                    Text="Приложение позволяет пользователям создавать безопасные пароли для баз игроков. Пользователи могут указать количество необходимых паролей и сгенерировать их одним нажатием кнопки."
+                    TextColor="#dcebf9"
+                    FontSize="16"
+                    Margin="0,5" />
+
+                <Label Text="Калькулятор рейда:"
+                       FontAttributes="Bold"
+                       TextColor="#dcebf9"
+                       FontSize="18"
+                       Margin="0,10" />
+                <Label
+                    Text="При наличии информации о рейдах и игровых событиях, игроки могут использовать калькулятор рейда для более эффективного планирования своих действий в игре. Это может включать в себя подсчет ресурсов, времени и других важных параметров."
+                    TextColor="#dcebf9"
+                    FontSize="16"
+                    Margin="0,5" />
+            </StackLayout>
+
+            <!-- Информация о версии приложения -->
+            <Label
+                Text="Приложение DayZ Helper разработано с учетом удобства использования и обеспечивает пользователей необходимыми инструментами для более успешного и приятного опыта игры в DayZ."
+                TextColor="#dcebf9"
+                FontSize="16"
+                Margin="0,20" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

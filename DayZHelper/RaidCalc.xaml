@@ -2,8 +2,102 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DayZHelper.RaidCalc">
+             x:Class="DayZHelper.RaidCalc"
+             BackgroundColor="#13171b">
     <ContentPage.Content>
-        
+           <ScrollView>
+           <StackLayout Padding="20"
+                        BackgroundColor="#13171b">
+              
+               <!-- Будем запрашивать у челов то сколько они будут рейдить стен? -->
+               <!--       или по имеющимся ресурсам считать на сколько этого хватит? -->
+               <!--        -->
+               <!--       тип они вводят у нас есть 6 гранат и через чекбоксы выбирают что у них есть допустим  -->
+               <!--       5.56 - 200 шт. -->
+               <!--       5.45 - 230 шт. -->
+               <!--       308 - 323 шт.  -->
+               <!--       Вывод вам хватит на  -->
+               <!--       2 металл стены -->
+               <!--       1 деревянная стена -->
+               <!--        -->
+               <!--       или тоже самое но в обратном порядке или сделаем то и то? -->
+               
+               
+            <Label Text="Данные для расчета:"
+                   FontAttributes="Bold"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
+
+            <Label Text="Имеющиеся типы патронов:"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
+
+            <!-- Выпадающий список с выбором имеющихся патронов через checkbox-->
+            
+            <!-- Выпадающий список с выбором имеющихся оружий через checkbox-->
+            
+            <!-- Выбор рейтов защиты -->
+            <Label Text="Выберите рейты защиты:"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
+
+            <!-- <Entry x:Name="WoodProtectionRate" -->
+            <!--        BackgroundColor="#dcebf9" -->
+            <!--        TextColor="#134271" -->
+            <!--        Keyboard="Numeric" -->
+            <!--        Margin="0.1" -->
+            <!--        HorizontalTextAlignment="Center" -->
+            <!--        Placeholder="Введите рейт защиты по дереву" /> -->
+            <!-- -->
+            <!-- <Entry x:Name="MetalProtectionRate" -->
+            <!--        BackgroundColor="#dcebf9" -->
+            <!--        TextColor="#134271" -->
+            <!--        Keyboard="Numeric" -->
+            <!--        Margin="0.1" -->
+            <!--        HorizontalTextAlignment="Center" -->
+            <!--        Placeholder="Введите рейт защиты по металлу" /> -->
+            <!-- -->
+            <!-- <Entry x:Name="SupportProtectionRate" -->
+            <!--        BackgroundColor="#dcebf9" -->
+            <!--        TextColor="#134271" -->
+            <!--        Keyboard="Numeric" -->
+            <!--        Margin="0.1" -->
+            <!--        HorizontalTextAlignment="Center" -->
+            <!--        Placeholder="Введите рейт защиты по задней стене" /> -->
+             <!--Выбор колличества стен -->
+            <Label Text="Выберите колличества стен:"
+                   TextColor="#dcebf9"
+                   FontSize="18"
+                   Margin="0,20" />
+
+            <!--<Entry x:Name="NumberOfMetalWalls"
+                   BackgroundColor="#dcebf9"
+                   TextColor="#134271"
+                   Keyboard="Numeric"
+                   Margin="0.1"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Введите количество металлических стен" />
+
+            <Entry x:Name="NumberOfWoodWalls"
+                   BackgroundColor="#dcebf9"
+                   TextColor="#134271"
+                   Keyboard="Numeric"
+                   Margin="0.1"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Введите количество деревянных стен" />-->
+
+             <!--Кнопка для расчета -->
+            <Button Text="Рассчитать"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="18"
+                    Margin="0,20" />
+
+        </StackLayout>
+                  </ScrollView>
     </ContentPage.Content>
+       
 </ContentPage>
