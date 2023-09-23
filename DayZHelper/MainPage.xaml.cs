@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace DayZHelper
 {
     public partial class MainPage : ContentPage
     {
+        private ObservableCollection<string> passwordsCollection;
+
         public MainPage()
         {
             InitializeComponent();
+            passwordsCollection = new ObservableCollection<string>();
+            PasswordsCollectionView.ItemsSource = passwordsCollection;
         }
 
         private void GenerateButton_Clicked(object sender, EventArgs e)
@@ -16,27 +21,35 @@ namespace DayZHelper
             if (int.TryParse(NumberOfPasswordsEntry.Text, out int numberOfPasswords) && numberOfPasswords > 0)
             {
                 var passwords = GeneratePasswords(numberOfPasswords);
-                PasswordsLabel.Text = string.Join(Environment.NewLine, passwords);
+                PasswordsCollectionView.ItemsSource = passwords;
             }
             else
             {
-                PasswordsLabel.Text = "Введите допустимое количество паролей:";
+                PasswordsCollectionView.ItemsSource = new List<string> { "Введите допустимое количество паролей:" };
             }
         }
+
 
         private List<string> GeneratePasswords(int numberOfPasswords)
         {
             var passwords = new List<string>();
             var random = new Random();
 
-            while (passwords.Count < numberOfPasswords)
-            {
-                // Генерируем случайное число от 0 до 9999 и преобразуем его в строку с нулями в начале.
-                string newPassword = random.Next(10000).ToString("D4");
+            int leftColumnCount = numberOfPasswords / 2; // Количество элементов для левой колонки
+            int rightColumnCount = numberOfPasswords - leftColumnCount; // Количество элементов для правой колонки
 
-                if (!passwords.Contains(newPassword))
+            for (int i = 0; i < Math.Max(leftColumnCount, rightColumnCount); i++)
+            {
+                if (i < leftColumnCount)
                 {
-                    passwords.Add($"Пароль #{passwords.Count + 1}: {newPassword}");
+                    string leftPassword = random.Next(10000).ToString("D4");
+                    passwords.Add($"Пароль #{i + 1}: {leftPassword}");
+                }
+
+                if (i < rightColumnCount)
+                {
+                    string rightPassword = random.Next(10000).ToString("D4");
+                    passwords.Add($"Пароль #{leftColumnCount + i + 1} : {rightPassword}");
                 }
             }
 
