@@ -1,16 +1,26 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DayZHelper.MainPage"
-             Title="DayZ Helper"
-             BackgroundColor="#13171b">
+             Title="DayZ Helper">
 
     <ScrollView>
-        <StackLayout Padding="20"
-                     BackgroundColor="#13171b">
+        <StackLayout Padding="20">
             <Label Text="Генератор паролей"
                    FontSize="24"
                    HorizontalOptions="CenterAndExpand"
                    Margin="0,50" />
+
+            <Picker x:Name="PasswordLengthPicker"
+                    Title="Выберите длину пароля"
+                    SelectedIndex="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>3 знака</x:String>
+                        <x:String>4 знака</x:String>
+                        <x:String>6 знаков</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
             <Label Text="Введите количество паролей:"
                    FontSize="18"
@@ -31,13 +41,11 @@
                        Placeholder="Количество паролей" />
             </Border>
 
-
             <Button Text="Сгенерировать пароли"
                     BackgroundColor="#2e85dc"
                     TextColor="#dcebf9"
                     Clicked="GenerateButton_Clicked"
                     Margin="0,20" />
-
 
             <CollectionView x:Name="PasswordsCollectionView"
                             SelectionMode="None">

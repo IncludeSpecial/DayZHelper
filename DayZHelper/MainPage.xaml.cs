@@ -1,58 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 
-namespace DayZHelper;
-
-public partial class MainPage : ContentPage
+namespace DayZHelper
 {
-    private ObservableCollection<string> passwordsCollection;
-
-    public MainPage()
+    public partial class MainPage : ContentPage
     {
-        InitializeComponent();
-        passwordsCollection = new ObservableCollection<string>();
-        PasswordsCollectionView.ItemsSource = passwordsCollection;
-    }
+        private List<string> passwordsList;
 
-    private void GenerateButton_Clicked(object sender, EventArgs e)
-    {
-        if (int.TryParse(NumberOfPasswordsEntry.Text, out var numberOfPasswords) && numberOfPasswords > 0)
+        public MainPage()
         {
-            var passwords = GeneratePasswords(numberOfPasswords);
-            PasswordsCollectionView.ItemsSource = passwords;
+            InitializeComponent();
+            passwordsList = new List<string>();
+            PasswordsCollectionView.ItemsSource = passwordsList;
         }
-        else
+
+        private void GenerateButton_Clicked(object sender, EventArgs e)
         {
-            PasswordsCollectionView.ItemsSource = new List<string> { "Введите допустимое количество паролей:" };
-        }
-    }
-
-
-    private List<string> GeneratePasswords(int numberOfPasswords)
-    {
-        var passwords = new List<string>();
-        var random = new Random();
-
-        var leftColumnCount = numberOfPasswords / 2;
-        var rightColumnCount = numberOfPasswords - leftColumnCount;
-
-        for (var i = 0; i < Math.Max(leftColumnCount, rightColumnCount); i++)
-        {
-            if (i < leftColumnCount)
+            if (int.TryParse(NumberOfPasswordsEntry.Text, out var numberOfPasswords) && numberOfPasswords > 0)
             {
-                var leftPassword = random.Next(10000).ToString("D4");
-                passwords.Add($"Пароль #{i + 1}: {leftPassword}");
+                var passwordLength = GetSelectedPasswordLength();
+                var passwords = GeneratePasswords(numberOfPasswords, passwordLength);
+                PasswordsCollectionView.ItemsSource = passwords;
             }
-
-            if (i < rightColumnCount)
+            else
             {
-                var rightPassword = random.Next(10000).ToString("D4");
-                passwords.Add($"Пароль #{leftColumnCount + i + 1} : {rightPassword}");
+                PasswordsCollectionView.ItemsSource = new List<string>
+                    { "Введите допустимое количество паролей (например, 4)." };
             }
         }
 
-        return passwords;
+        private int GetSelectedPasswordLength()
+        {
+            switch (PasswordLengthPicker.SelectedItem.ToString())
+            {
+                case "3 знака": return 3;
+                case "4 знака": return 4;
+                case "6 знаков": return 6;
+                default: return 4;
+            }
+        }
+
+        private List<string> GeneratePasswords(int numberOfPasswords, int passwordLength)
+        {
+            var passwords = new List<string>();
+            var random = new Random();
+
+            for (var i = 0; i < numberOfPasswords; i++)
+            {
+                var newPassword = GenerateRandomPassword(random, passwordLength);
+                passwords.Add($"Пароль #{i + 1}: {newPassword}");
+            }
+
+            return passwords;
+        }
+
+        private string GenerateRandomPassword(Random random, int length)
+        {
+            const string allowedChars = "0123456789";
+            var password = new StringBuilder();
+
+            for (var i = 0; i < length; i++)
+            {
+                var index = random.Next(0, allowedChars.Length);
+                password.Append(allowedChars[index]);
+            }
+
+            return password.ToString();
+        }
     }
 }
