@@ -1,77 +1,88 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DayZHelper.RaidCalc"
-             BackgroundColor="#13171b">
+<ContentPage
+    BackgroundColor="#13171b"
+    x:Class="DayZHelper.RaidCalc"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20"
-                         BackgroundColor="#13171b">
+            <StackLayout BackgroundColor="#13171b" Padding="20">
 
-                <!-- Будем запрашивать у челов то сколько они будут рейдить стен? -->
-                <!--       или по имеющимся ресурсам считать на сколько этого хватит? -->
-                <!--        -->
-                <!--       тип они вводят у нас есть 6 гранат и через чекбоксы выбирают что у них есть допустим  -->
-                <!--       5.56 - 200 шт. -->
-                <!--       5.45 - 230 шт. -->
-                <!--       308 - 323 шт.  -->
-                <!--       Вывод вам хватит на  -->
-                <!--       2 металл стены -->
-                <!--       1 деревянная стена -->
-                <!--        -->
-                <!--       или тоже самое но в обратном порядке или сделаем то и то? -->
+                <!--  Будем запрашивать у челов то сколько они будут рейдить стен?  -->
+                <!--  или по имеющимся ресурсам считать на сколько этого хватит?  -->
+                <!--    -->
+                <!--  тип они вводят у нас есть 6 гранат и через чекбоксы выбирают что у них есть допустим  -->
+                <!--  5.56 - 200 шт.  -->
+                <!--  5.45 - 230 шт.  -->
+                <!--  308 - 323 шт.  -->
+                <!--  Вывод вам хватит на  -->
+                <!--  2 металл стены  -->
+                <!--  1 деревянная стена  -->
+                <!--    -->
+                <!--  или тоже самое но в обратном порядке или сделаем то и то?  -->
 
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,20"
+                    Text="Страница отсутствует потому что еГОР лох :D"
+                    TextColor="#dcebf9" />
 
-                <Label Text="Данные для расчета:"
-                       FontAttributes="Bold"
-                       TextColor="#dcebf9"
-                       FontSize="18"
-                       Margin="0,20" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Margin="0,20"
+                    Text="Данные для расчета:"
+                    TextColor="#dcebf9" />
 
-                <Label Text="Имеющиеся типы патронов:"
-                       TextColor="#dcebf9"
-                       FontSize="18"
-                       Margin="0,20" />
+                <Label
+                    FontSize="18"
+                    Margin="0,20"
+                    Text="Имеющиеся типы патронов:"
+                    TextColor="#dcebf9" />
 
-                <!-- Выпадающий список с выбором имеющихся патронов через checkbox-->
+                <!--  Выпадающий список с выбором имеющихся патронов через checkbox  -->
 
-                <!-- Выпадающий список с выбором имеющихся оружий через checkbox-->
+                <!--  Выпадающий список с выбором имеющихся оружий через checkbox  -->
 
-                <!-- Выбор рейтов защиты -->
-                <Label Text="Выберите рейты защиты:"
-                       TextColor="#dcebf9"
-                       FontSize="18"
-                       Margin="0,20" />
+                <!--  Выбор рейтов защиты  -->
+                <Label
+                    FontSize="18"
+                    Margin="0,20"
+                    Text="Выберите рейты защиты:"
+                    TextColor="#dcebf9" />
 
-                <!-- <Entry x:Name="WoodProtectionRate" -->
-                <!--        BackgroundColor="#dcebf9" -->
-                <!--        TextColor="#134271" -->
-                <!--        Keyboard="Numeric" -->
-                <!--        Margin="0.1" -->
-                <!--        HorizontalTextAlignment="Center" -->
-                <!--        Placeholder="Введите рейт защиты по дереву" /> -->
-                <!-- -->
-                <!-- <Entry x:Name="MetalProtectionRate" -->
-                <!--        BackgroundColor="#dcebf9" -->
-                <!--        TextColor="#134271" -->
-                <!--        Keyboard="Numeric" -->
-                <!--        Margin="0.1" -->
-                <!--        HorizontalTextAlignment="Center" -->
-                <!--        Placeholder="Введите рейт защиты по металлу" /> -->
-                <!-- -->
-                <!-- <Entry x:Name="SupportProtectionRate" -->
-                <!--        BackgroundColor="#dcebf9" -->
-                <!--        TextColor="#134271" -->
-                <!--        Keyboard="Numeric" -->
-                <!--        Margin="0.1" -->
-                <!--        HorizontalTextAlignment="Center" -->
-                <!--        Placeholder="Введите рейт защиты по задней стене" /> -->
-                <!--Выбор колличества стен -->
-                <Label Text="Выберите колличества стен:"
-                       TextColor="#dcebf9"
-                       FontSize="18"
-                       Margin="0,20" />
+                <!--  <Entry x:Name="WoodProtectionRate"  -->
+                <!--  BackgroundColor="#dcebf9"  -->
+                <!--  TextColor="#134271"  -->
+                <!--  Keyboard="Numeric"  -->
+                <!--  Margin="0.1"  -->
+                <!--  HorizontalTextAlignment="Center"  -->
+                <!--  Placeholder="Введите рейт защиты по дереву" />  -->
+                <!--    -->
+                <!--  <Entry x:Name="MetalProtectionRate"  -->
+                <!--  BackgroundColor="#dcebf9"  -->
+                <!--  TextColor="#134271"  -->
+                <!--  Keyboard="Numeric"  -->
+                <!--  Margin="0.1"  -->
+                <!--  HorizontalTextAlignment="Center"  -->
+                <!--  Placeholder="Введите рейт защиты по металлу" />  -->
+                <!--    -->
+                <!--  <Entry x:Name="SupportProtectionRate"  -->
+                <!--  BackgroundColor="#dcebf9"  -->
+                <!--  TextColor="#134271"  -->
+                <!--  Keyboard="Numeric"  -->
+                <!--  Margin="0.1"  -->
+                <!--  HorizontalTextAlignment="Center"  -->
+                <!--  Placeholder="Введите рейт защиты по задней стене" />  -->
+                <!--  Выбор колличества стен  -->
+                <Label
+                    FontSize="18"
+                    Margin="0,20"
+                    Text="Выберите колличества стен:"
+                    TextColor="#dcebf9" />
 
                 <!--<Entry x:Name="NumberOfMetalWalls"
                    BackgroundColor="#dcebf9"
@@ -89,12 +100,13 @@
                    HorizontalTextAlignment="Center"
                    Placeholder="Введите количество деревянных стен" />-->
 
-                <!--Кнопка для расчета -->
-                <Button Text="Рассчитать"
-                        BackgroundColor="#007BFF"
-                        TextColor="White"
-                        FontSize="18"
-                        Margin="0,20" />
+                <!--  Кнопка для расчета  -->
+                <Button
+                    BackgroundColor="#007BFF"
+                    FontSize="18"
+                    Margin="0,20"
+                    Text="Рассчитать"
+                    TextColor="White" />
 
             </StackLayout>
         </ScrollView>

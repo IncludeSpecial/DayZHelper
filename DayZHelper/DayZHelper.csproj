@@ -12,14 +12,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
 
         <!-- Display name -->
-        <ApplicationTitle>DayZHelper</ApplicationTitle>
+        <ApplicationTitle>DayZ Helper</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.dayzhelper</ApplicationId>
+        <ApplicationId>com.includespecial.dayzhelper</ApplicationId>
         <ApplicationIdGuid>8612D5E8-3DDD-45DF-8E54-52CA84B001AF</ApplicationIdGuid>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationDisplayVersion>0.0.5</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
