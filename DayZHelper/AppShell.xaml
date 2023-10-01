@@ -1,28 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Shell
+    FlyoutBehavior="Disabled"
     x:Class="DayZHelper.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DayZHelper"
-    FlyoutBehavior="Disabled"
-    BackgroundColor="#13171b">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <FlyoutItem>
         <ShellContent
-            Title="Генерация пароля"
             ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            Route="MainPage"
+            Title="Генерация пароля" />
 
         <ShellContent
-            Title="Калькулятор рейда"
             ContentTemplate="{DataTemplate local:RaidCalc}"
-            Route="MainPage" />
+            Route="MainPage"
+            Title="Калькулятор рейда" />
 
         <ShellContent
-            Title="О приложении"
             ContentTemplate="{DataTemplate local:AboutPage}"
-            Route="MainPage" />
+            Route="MainPage"
+            Title="О приложении" />
 
     </FlyoutItem>
 

@@ -1,4 +1,6 @@
-﻿<ContentPage
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
     Title="DayZ Helper"
     x:Class="DayZHelper.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -11,7 +13,10 @@
                 HorizontalOptions="CenterAndExpand"
                 Margin="0,50"
                 Text="Генератор паролей" />
-
+            <Label
+                FontSize="18"
+                Margin="0,10"
+                Text="Выберите длину пароля из списка:" />
             <Picker
                 SelectedIndex="1"
                 Title="Выберите длину пароля"
@@ -27,37 +32,26 @@
 
             <Label
                 FontSize="18"
-                Margin="0,50"
+                Margin="0,10"
                 Text="Введите количество паролей:" />
+            <Entry
+                Keyboard="Numeric"
+                Margin="0.1"
+                Placeholder="Количество паролей"
+                x:Name="NumberOfPasswordsEntry" />
 
-            <Border Stroke="#13171b" StrokeThickness="1">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="5,5,5,5" />
-                </Border.StrokeShape>
-
-                <Entry
-                    BackgroundColor="#dcebf9"
-                    HorizontalTextAlignment="Center"
-                    Keyboard="Numeric"
-                    Margin="0.1"
-                    Placeholder="Количество паролей"
-                    TextColor="#134271"
-                    x:Name="NumberOfPasswordsEntry" />
-            </Border>
 
             <Button
-                BackgroundColor="#2e85dc"
                 Clicked="GenerateButton_Clicked"
                 Margin="0,10"
-                Text="Сгенерировать пароли"
-                TextColor="#dcebf9" />
+                Text="Сгенерировать пароли" />
 
             <Button
-                BackgroundColor="#F34642"
+                BackgroundColor="{StaticResource ClearButtonColorBackground}"
                 Clicked="ClearListWithPasswords"
                 Margin="0,10"
                 Text="Очистить"
-                TextColor="#dcebf9" />
+                TextColor="{StaticResource ClearButtonColorText}" />
 
             <CollectionView SelectionMode="None" x:Name="PasswordsCollectionView">
                 <CollectionView.ItemsLayout>
